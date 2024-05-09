@@ -43,7 +43,7 @@ print(''.join(f'{classes[labels[j]]:5s}' for j in range(batch_size)))
 
 #IMPOSTARE LA RETE NEURALE PER APPRENDIMENTO
 class Net(nn.Module):
-    def __init__(self): #TUTTI I LAYER PER LA RETE NEURALE PORCODIO STO IMPAZZENDO DIO CANE AIUTO
+    def __init__(self): #TUTTI I LAYER PER LA RETE NEURALE
         super().__init__()
         self.conv1 = nn.Conv2d(3,6,5)
         self.pool = nn.MaxPool2d(2,2)
@@ -68,7 +68,7 @@ net=Net()
 criterion = nn.CrossEntropyLoss()
 optimizer = optin.SGD(net.parameters(),lr=0.001,momentum=0.9) #lr = leareinbg rate porcDOSFIAOSDFIUODS
 
-# ORA IMPOSTARE 2 EPOCHE DEL PORCO DI DIO
+# 2 cicli
 for epoch in range(2): #CICLARE IL DATASERT
     running_loss = 0.0
     for i, data in enumerate(trainloader, 0): #ITERA PER OGNI BATCH
@@ -85,7 +85,7 @@ for epoch in range(2): #CICLARE IL DATASERT
             running_loss=0
 print('allenamento finito andate in pace')
 
-#SALVARE TUTTO SONO LE 3
+#SALVARE 
 PATH= './cifar_net.pth'
 torch.save(net.state_dict(),PATH)
 #carica
