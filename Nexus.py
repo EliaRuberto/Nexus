@@ -115,7 +115,7 @@ with torch.no_grad():
 
 for classname, correct_count in correct_pred.items():
     accuracy = 100 * float(correct_count)/total_pred[classname]
-    print(f'accuratezza per classe: {classname:5s} e {accuracy:1f}%')
+    print(f'accuratezza per classe: {classname:5s} è {accuracy:1f}%')
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
     print(device)
     net.to(device)
